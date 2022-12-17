@@ -1,0 +1,83 @@
+{
+    "merkleRoot": "0x1f373a8cf9a2f833945105a92a4ca6e39d2b004e96576aeba3ad32ba5aa11d02",
+    "claims": {
+        "0x524A4E52Aa9ee1303bDbf7364964BaA3526CE35a": {
+            "index": 0,
+            "proof": [
+                "0x864fd6af78988fb9318717ad0566da25145dd0d0bfa7c1968f305b302c7fe420",
+                "0x8720446f1f51726e84523f90f0390c7cf3e9d0a7ae4030f6491e20d2142c59de",
+                "0xd290ea7f12f29f0cd4dd6f6eb914dbe3de0dc24bef957774b1308cae8a700051",
+                "0xb4e1a21ad3fb6558123e811766c90a60e1fe7c1e2f48461cbbdd296d2635768b"
+            ]
+        },
+        "0x0181E032EAD87fb24fE5A702C9Dd15f947B031E4": {
+            "index": 1,
+            "proof": [
+                "0xacb85a3b092ee51d6b16d2c9eb2bec6ac026e76ec886f3f2ecc980f54fb75f13",
+                "0x2cc15dd1f67ef805c5534d0ec56f7dae1dee31c0513a20449a2195f3eac3f6a8",
+                "0xd290ea7f12f29f0cd4dd6f6eb914dbe3de0dc24bef957774b1308cae8a700051",
+                "0xb4e1a21ad3fb6558123e811766c90a60e1fe7c1e2f48461cbbdd296d2635768b"
+            ]
+        },
+        "0xA86e555f5d653c03a1269d3666E4161dD92AD3D5": {
+            "index": 2,
+            "proof": [
+                "0x936faa7e69128757918420bac23990c1b56b33932a5f082ab64137ad3292f0c9",
+                "0x2cc15dd1f67ef805c5534d0ec56f7dae1dee31c0513a20449a2195f3eac3f6a8",
+                "0xd290ea7f12f29f0cd4dd6f6eb914dbe3de0dc24bef957774b1308cae8a700051",
+                "0xb4e1a21ad3fb6558123e811766c90a60e1fe7c1e2f48461cbbdd296d2635768b"
+            ]
+        },
+        "0x132Da071C250E2CB0371a0DBfFc7e086954e6376": {
+            "index": 3,
+            "proof": [
+                "0x358402a0cc22e9976ed92194df94d54c63c0e3d8b1d5a7d0b995866886501c04",
+                "0x794c9650c276ce2d7f588df67d7c66b293e93561def950376c01cbee88dac48b",
+                "0xc33c13cfabc9ab85910c540e173e3fd46e1b08d3046fff0b29032b4bb9b3d5b7",
+                "0xb4e1a21ad3fb6558123e811766c90a60e1fe7c1e2f48461cbbdd296d2635768b"
+            ]
+        },
+        "0xB337A431F3F10408A34348Be030bC4A8209Af6F8": {
+            "index": 4,
+            "proof": [
+                "0x53c93150d6502df73f9d03a6c7ea23bec3a352489014eef0f6aed0a75bf423cc",
+                "0x51725228485bad59e66adc3e12d652150640986e26bc2e33fb4d774595de034e",
+                "0xc33c13cfabc9ab85910c540e173e3fd46e1b08d3046fff0b29032b4bb9b3d5b7",
+                "0xb4e1a21ad3fb6558123e811766c90a60e1fe7c1e2f48461cbbdd296d2635768b"
+            ]
+        },
+        "0xc2894e1553F185AFDe4aBE8C89Cc795597A0f5a4": {
+            "index": 5,
+            "proof": [
+                "0x7eb014e7a4954e61c315e907dc9fa83d7153b44c80dbcea1f36c76dd260f714f",
+                "0x51725228485bad59e66adc3e12d652150640986e26bc2e33fb4d774595de034e",
+                "0xc33c13cfabc9ab85910c540e173e3fd46e1b08d3046fff0b29032b4bb9b3d5b7",
+                "0xb4e1a21ad3fb6558123e811766c90a60e1fe7c1e2f48461cbbdd296d2635768b"
+            ]
+        },
+        "0xFe7045f1BfcA878596f9183dd4e1f5832a3f37E2": {
+            "index": 6,
+            "proof": [
+                "0x5465110de3f899f6eeae64d1d83a6d5ccd076943e23ab5d36d7966bf46d82b02"
+            ]
+        },
+        "0xFD3Be7F97444BA80a0Ee472Af3B02BCE3B91228F": {
+            "index": 7,
+            "proof": [
+                "0x05fea0a62d135f9bfa42ee83fd4497a448650842d03db0306d13788ce24d33ff",
+                "0x794c9650c276ce2d7f588df67d7c66b293e93561def950376c01cbee88dac48b",
+                "0xc33c13cfabc9ab85910c540e173e3fd46e1b08d3046fff0b29032b4bb9b3d5b7",
+                "0xb4e1a21ad3fb6558123e811766c90a60e1fe7c1e2f48461cbbdd296d2635768b"
+            ]
+        },
+        "0x71E0d332603BA09B726D0A929EB9B02bf0943091": {
+            "index": 8,
+            "proof": [
+                "0x88e417fc8df7b0d42e827bad516d628611439a1249c61cca898463adb27f9c5a",
+                "0x8720446f1f51726e84523f90f0390c7cf3e9d0a7ae4030f6491e20d2142c59de",
+                "0xd290ea7f12f29f0cd4dd6f6eb914dbe3de0dc24bef957774b1308cae8a700051",
+                "0xb4e1a21ad3fb6558123e811766c90a60e1fe7c1e2f48461cbbdd296d2635768b"
+            ]
+        }
+    }
+}

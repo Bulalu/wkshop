@@ -33,12 +33,12 @@ contract NFT is ERC721, Ownable {
     // ============ ACCESS CONTROL/SANITY MODIFIERS ============
 
 
-    modifier isValidMerkleProof(bytes32[] calldata merkleProof, bytes32 root, uint256 index ) {
+    modifier isValidMerkleProof(bytes32[] calldata merkleProof, bytes32 root, uint256 index, address to ) {
       require(
             MerkleProof.verify(
                 merkleProof,
                 root,
-                keccak256(abi.encodePacked(index, msg.sender))
+                keccak256(abi.encodePacked(index, to))
             ),
             "Address does not exist in list"
         );
@@ -69,11 +69,14 @@ contract NFT is ERC721, Ownable {
     function grantNFT(
         uint8 numberOfTokens,
         bytes32[] calldata merkleProof,
-        uint256 index
+        uint256 index,
+        address to
+        
     )
+        onlyOwner
         external
-        isValidMerkleProof(merkleProof, merkleRoot, index)
-        maxNFTPerWallet(numberOfTokens)
+        isValidMerkleProof(merkleProof, merkleRoot, index, to)
+       
     {
         
 
@@ -82,11 +85,11 @@ contract NFT is ERC721, Ownable {
             "Not enough witches remaining to mint"
         );
 
-        require(!granted[msg.sender], "Already granted nft");
+        require(!granted[to], "Already granted nft");
         
 
         for (uint256 i = 0; i < numberOfTokens; i++) {
-            _safeMint(msg.sender, nextTokenId());
+            _safeMint(to, nextTokenId());
         }
     }
 

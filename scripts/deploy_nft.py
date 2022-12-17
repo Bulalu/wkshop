@@ -2,13 +2,11 @@ from brownie import NFT, accounts, config, network
 from scripts.helpful_scripts import get_account
 from scripts.merkle_stuff import prepare_merkle_tree
 from merkletools import *
-
-# mt = MerkleTools(hash_type="md5")
-
-
+from scripts.address import whitelist_mainnet
+import json
 
 whiteList = [account.address for account in accounts]
-whiteList_mainnet = ["0xa3dD11E7D3Aa89b9e0598ac0d678910417d63989", "0xA66F90C0B7be6955D6c8f9B16dfD0A56171e038e"]
+
 TOKEN_URI = "https://gateway.pinata.cloud/ipfs/QmervZ8eAm9KenCvBnSaS9v4Y2nCiAzv3XhjpMR32TozTh"
 
 # https://testnets.opensea.io/collection/hogwarts-lw66ez90bg
@@ -18,13 +16,15 @@ def deploy_nft():
     name = "Hogwarts"
     symbol = "HGT"
 
-    distribution = prepare_merkle_tree(whiteList_mainnet)
+    distribution = prepare_merkle_tree(whitelist_mainnet)
     merkle_root = distribution["merkleRoot"]
-
-    print(f"Merkle root: {merkle_root}")
- 
- 
-    contract = NFT.deploy(name, symbol, merkle_root, {"from": owner}, publish_source=config["networks"][network.show_active()]["verify"])
+    if (len(NFT)!= 0):
+        return NFT[-1], distribution
+    filename = f'{merkle_root}.json'          
+    with open(filename, 'w') as file_object: 
+        json.dump(distribution, file_object, indent=4) 
+        
+    contract = NFT.deploy(name, symbol, merkle_root, {"from": owner})
 
     contract.setTokenURI(TOKEN_URI, {"from": owner}) 
 
@@ -37,11 +37,16 @@ def grant_nft_to_users():
     owner = get_account()
     contract, distribution = deploy_nft()
    
-    merkle_proof = distribution["claims"][owner.address]["proof"]
-    index = distribution["claims"][owner.address]["index"]
-
-    contract.grantNFT( 1, merkle_proof, index, {"from": owner})
+    # merkle_proof = distribution["claims"][owner.address]["proof"]
+    # index = distribution["claims"][owner.address]["index"]
+   
+    for address in whitelist_mainnet:
+        merkle_proof = distribution["claims"][address]["proof"]
+        index = distribution["claims"][address]["index"]
+        tx = contract.grantNFT( 1, merkle_proof, index, address, {"from": owner})
+        tx.wait(1)
     
+    print("NFTs sent 🚢")
 
 
 def main():
